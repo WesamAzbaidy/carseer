@@ -6,9 +6,9 @@ import {
 
 export default function VehicleTypesReducer(
     state = {
-        data: {},
-        error: false,
-        loading: false,
+        vehicleTypes: {},
+        vehicleTypesError: false,
+        vehicleTypesLoading: false,
     },
     action = {}
 ) {
@@ -16,21 +16,21 @@ export default function VehicleTypesReducer(
         case GET_VEHICLE_TYPES_ERROR:
             return {
                 ...state,
-                error: true,
-                loading: false,
+                vehicleTypesError: true,
+                vehicleTypesLoading: false,
             };
         case GET_VEHICLE_TYPES_REQUEST:
             return {
                 ...state,
-                loading: true,
-                error: false,
+                vehicleTypesLoading: true,
+                vehicleTypesError: false,
             };
         case GET_VEHICLE_TYPES_SUCCESS:
             return {
                 ...state,
-                data: action.payload,
-                loading: false,
-                error: false,
+                vehicleTypes: action.payload,
+                vehicleTypesLoading: false,
+                vehicleTypesError: false,
             };
         default:
             return state;

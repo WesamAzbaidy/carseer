@@ -6,9 +6,9 @@ import {
 
 export default function CarManufacturersAction(
     state = {
-        data: {},
-        error: false,
-        loading: false,
+        makesList: {},
+        makesListError: false,
+        makesListLoading: false,
     },
     action = {}
 ) {
@@ -16,18 +16,21 @@ export default function CarManufacturersAction(
         case GET_ALL_MAKES_ERROR:
             return {
                 ...state,
-                loading: false,
+                makesListLoading: false,
+                makesListError: true,
             };
         case GET_ALL_MAKES_REQUEST:
             return {
                 ...state,
-                loading: true,
+                makesListLoading: true,
+                makesListError: false,
             };
         case GET_ALL_MAKES_SUCCESS:
             return {
                 ...state,
                 data: action.payload,
-                loading: false,
+                makesListLoading: false,
+                makesListError: false,
             };
         default:
             return state;

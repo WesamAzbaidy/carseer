@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Box } from '@mui/material';
 import Sidebar from './pages/Sidebar/Sidebar';
-import Home from './pages/Home/Home';
+import CarsSelection from './pages/carsSelection/CarsSelection';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<CarsSelection />} />
         </Routes>
       </Box>
     </Box>

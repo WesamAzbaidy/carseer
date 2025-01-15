@@ -6,9 +6,9 @@ import {
 
 export default function ModelsCarReducer(
     state = {
-        data: {},
-        error: false,
-        loading: false,
+        modelsCar: {},
+        modelsCarError: false,
+        modelsCarLoading: false,
     },
     action = {}
 ) {
@@ -16,21 +16,21 @@ export default function ModelsCarReducer(
         case GET_MODELS_CAR_ERROR:
             return {
                 ...state,
-                error: true,
-                loading: false,
+                modelsCarError: true,
+                modelsCarLoading: false,
             };
         case GET_MODELS_CAR_REQUEST:
             return {
                 ...state,
-                loading: true,
-                error: false,
+                modelsCarLoading: true,
+                modelsCarError: false,
             };
         case GET_MODELS_CAR_SUCCESS:
             return {
                 ...state,
-                data: action.payload,
-                loading: false,
-                error: false,
+                modelsCar: action.payload,
+                modelsCarLoading: false,
+                modelsCarError: false,
             };
         default:
             return state;

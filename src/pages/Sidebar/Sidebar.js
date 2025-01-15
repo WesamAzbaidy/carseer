@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 import {
   Collapse,
 } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -30,11 +30,6 @@ const Sidebar = (props) => {
   const navigate = useNavigate();
   const container =
     window !== undefined ? () => window.document.body : undefined;
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
   const navItems = [
     { id: 1, title: "Home", url: "/", icon: <HomeIcon /> },
   ];
