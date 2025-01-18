@@ -33,9 +33,9 @@ export const resetModelsData = () => ({
 });
 
 // GetModelsForMakeIdYear API call using ApiComponent
-export const GetModelsForMakeIdYear = (makeId, modelYear, vehicleType) => async (dispatch) => {
+export const GetModelsForMakeIdYear = (makeId, modelYear, vehicleType, pageNumber = 1, pageSize = 5) => async (dispatch) => {
     await ApiComponent({
-        url: `https://localhost:44353/api/Vehicle/models?makeId=${makeId}&year=${modelYear}&vehicleType=${vehicleType}`,
+        url: `https://localhost:44353/api/Vehicle/models?makeId=${makeId}&year=${modelYear}&vehicleType=${vehicleType}&pageNumber=${pageNumber}&pageSize=${pageSize}`,
         method: 'GET',
         dispatch,
         onRequest: getModelsCarRequest,

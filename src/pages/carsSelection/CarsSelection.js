@@ -137,7 +137,13 @@ const CarsSelection = () => {
         </Card>
       </Container>
 
-      <HomeTable year={year.year()} />
+      <HomeTable
+        year={year.year()}
+        onPageChange={(newPage, newPageSize) => {
+          dispatch(GetModelsForMakeIdYear(selectedMake, year.year(), selectedVehicleType, newPage, newPageSize));
+        }}
+      />
+
     </div>
   );
 };

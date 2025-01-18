@@ -30,7 +30,7 @@ export default function ModelsCarReducer(
         case GET_MODELS_CAR_SUCCESS:
             return {
                 ...state,
-                modelsCar: action.payload,
+                modelsCar: action.payload.data,
                 modelsCarLoading: false,
                 modelsCarError: false,
             };
