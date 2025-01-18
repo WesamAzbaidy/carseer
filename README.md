@@ -15,12 +15,11 @@ Make sure you have the following software installed:
 
 Clone the repository to your local machine:
 
-```bash
 git clone https://github.com/WesamAzbaidy/carseer.git
 cd career
 npm i
 npm start 
 
-### Step 2: open in browser http://localhost:3000
+
 
 
