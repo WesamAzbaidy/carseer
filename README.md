@@ -1,15 +1,27 @@
-# Getting Started with Create React App
+# Carseer Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of the Carseer web application, built using React. It allows users to select a car make and manufacturing year and retrieve available vehicle types and models for the selected criteria.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Make sure you have the following software installed:
 
-### `npm start`
+- **Node.js** (v16 or higher): [Download Node.js](https://nodejs.org/)
+- **npm** (Node Package Manager) — comes with Node.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installing the Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/WesamAzbaidy/carseer.git
+cd career
+npm i
+npm start 
+
+
+open in browser http://localhost:3000
+
+
