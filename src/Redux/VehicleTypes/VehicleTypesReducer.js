@@ -2,6 +2,7 @@ import {
     GET_VEHICLE_TYPES_REQUEST,
     GET_VEHICLE_TYPES_SUCCESS,
     GET_VEHICLE_TYPES_ERROR,
+    RESET_VEHICLE_TYPES_DATA
 } from './VehicleTypesAction.js';
 
 export default function VehicleTypesReducer(
@@ -28,9 +29,16 @@ export default function VehicleTypesReducer(
         case GET_VEHICLE_TYPES_SUCCESS:
             return {
                 ...state,
-                vehicleTypes: action.payload,
+                vehicleTypes: action.payload.data,
                 vehicleTypesLoading: false,
                 vehicleTypesError: false,
+            };
+        case RESET_VEHICLE_TYPES_DATA:
+            return {
+                ...state,
+                vehicleTypes: {},
+                vehicleTypesError: false,
+                vehicleTypesLoading: false,
             };
         default:
             return state;

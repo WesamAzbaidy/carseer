@@ -13,7 +13,7 @@ import {
   Collapse,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import HomeIcon from "@mui/icons-material/Home";
+import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -31,7 +31,7 @@ const Sidebar = (props) => {
   const container =
     window !== undefined ? () => window.document.body : undefined;
   const navItems = [
-    { id: 1, title: "Home", url: "/", icon: <HomeIcon /> },
+    { id: 1, title: "Cars Selection", url: "/", icon: <DirectionsCarFilledIcon /> },
   ];
 
   const handleDrawerClose = () => {

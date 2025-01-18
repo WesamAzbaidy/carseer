@@ -10,57 +10,74 @@ import { Box, Card, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 const CarsSelectionTable = (props) => {
-  const data = useSelector((state) => state.ModelsCar.data.Results);
-
+  const data = useSelector((state) => state.ModelsCar?.modelsCar?.data);
   return (
-    <Card p={2}>
-      <Box display="flex" m={3}>
-        <Typography variant="h6" fontWeight="bold">
-          Vehicle Models for {props.year}
-        </Typography>
-      </Box>
-
-      <TableContainer component={Paper}>
-        <Table
+    <>
+      {data === undefined ? (
+        <Box
           sx={{
-            minWidth: 650,
-            "& .MuiTableCell-root": {
-              border: "none",
-              fontWeight: "bold",
-            },
-            "& .MuiTableRow-root": {
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.02)",
-              },
-            },
+            mt: 6,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center", // Center text alignment
           }}
         >
-          <TableHead>
-            <TableRow>
-              <TableCell align="center" width="40%">
-                Make Name
-              </TableCell>
-              <TableCell align="center" width="40%">
-                Model Name
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell align="center" width="40%">
-                  {row.Make_Name}
-                </TableCell>
-                <TableCell align="center" width="40%">
-                  {row.Model_Name}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Card>
+          <Typography variant="h6" fontWeight="bold">
+            No Data Found
+          </Typography>
+        </Box>
+      ) :
+        <Card p={2}>
+          <Box display="flex" m={3}>
+            <Typography variant="h6" fontWeight="bold">
+              Vehicle Models for {props.year}
+            </Typography>
+          </Box>
+
+          <TableContainer component={Paper}>
+            <Table
+              sx={{
+                minWidth: 650,
+                "& .MuiTableCell-root": {
+                  border: "none",
+                  fontWeight: "bold",
+                },
+                "& .MuiTableRow-root": {
+                  transition: "transform 0.3s",
+                  "&:hover": {
+                    transform: "scale(1.02)",
+                  },
+                },
+              }}
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center" width="40%">
+                    Make Name
+                  </TableCell>
+                  <TableCell align="center" width="40%">
+                    Model Name
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {data?.map((row) => (
+                  <TableRow key={row.modelID}>
+                    <TableCell align="center" width="40%">
+                      {row.makeName}
+                    </TableCell>
+                    <TableCell align="center" width="40%">
+                      {row.modelName}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Card>
+      }
+    </>
   );
 };
 

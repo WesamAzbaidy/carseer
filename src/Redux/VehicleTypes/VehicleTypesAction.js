@@ -5,6 +5,9 @@ export const GET_VEHICLE_TYPES_REQUEST = 'GET_VEHICLE_TYPES_REQUEST';
 export const GET_VEHICLE_TYPES_SUCCESS = 'GET_VEHICLE_TYPES_SUCCESS';
 export const GET_VEHICLE_TYPES_ERROR = 'GET_VEHICLE_TYPES_ERROR';
 
+export const RESET_VEHICLE_TYPES_DATA = 'RESET_VEHICLE_TYPES_DATA';
+
+
 // Define action creators for GetVehicleTypesForMake
 export const getVehicleTypesRequest = () => {
     return {
@@ -25,10 +28,14 @@ export const getVehicleTypesError = () => {
     };
 };
 
+export const resetVehicleTypes = () => ({
+    type: RESET_VEHICLE_TYPES_DATA,
+});
+
 // GetVehicleTypesForMake API call using ApiComponent
 export const GetVehicleTypesForMake = (makeId) => async (dispatch) => {
     await ApiComponent({
-        url: `https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMakeId/${makeId}?format=json`,
+        url: `https://localhost:44353/api/Vehicle/${makeId}/types`,
         method: 'GET',
         dispatch,
         onRequest: getVehicleTypesRequest,

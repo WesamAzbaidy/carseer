@@ -16,6 +16,7 @@ export default function CarManufacturersAction(
         case GET_ALL_MAKES_ERROR:
             return {
                 ...state,
+                makesList: null,
                 makesListLoading: false,
                 makesListError: true,
             };
@@ -28,7 +29,7 @@ export default function CarManufacturersAction(
         case GET_ALL_MAKES_SUCCESS:
             return {
                 ...state,
-                data: action.payload,
+                data: action.payload.data,
                 makesListLoading: false,
                 makesListError: false,
             };

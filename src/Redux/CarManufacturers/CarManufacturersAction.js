@@ -26,13 +26,14 @@ export const getAllMakesError = () => {
 };
 
 // GetAllMakes API call using ApiComponent
-export const GetAllMakes = () => async (dispatch) => {
+export const GetAllMakes = (size = 10, makeNameSearch = '') => async (dispatch) => {
     await ApiComponent({
-        url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json',
+        url: 'https://localhost:44353/api/Vehicle/makes',
         method: 'GET',
         dispatch,
         onRequest: getAllMakesRequest,
         onSuccess: getAllMakesSuccess,
         onError: getAllMakesError,
+        params: { size, makeNameSearch },
     });
 };
