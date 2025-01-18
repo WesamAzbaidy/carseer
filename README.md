@@ -21,7 +21,6 @@ cd career
 npm i
 npm start 
 
-
-open in browser http://localhost:3000
+### Step 2: open in browser http://localhost:3000
 
 
